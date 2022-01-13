@@ -1,1 +1,2 @@
-themes/Eclectic/.gitignore
+.gitignore
+.DS_Store
