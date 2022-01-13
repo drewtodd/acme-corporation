@@ -1,6 +1,5 @@
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-  highlight:
-    lineNos: true
+goldmark:
+  renderer:
+    unsafe: true
+highlight:
+  lineNos: true
