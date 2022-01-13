@@ -10,9 +10,15 @@ draft: false
 
 Acme Corporation &trade; is the world's leading manufacturer of digital shapes. From squares and circles to triangles and hexagons, we have it all. Browse through our collection of various forms with different thicknesses and line styles.
 
+{{< divider >}}
+
 > We shape the world. You live in it.
 
+{{< divider >}}
+
 We provide :smile: to hundreds of happy customers.
+
+{{< youtube id="nLAVanlu5js" >}}
 
 ## Manufacturing
 
@@ -32,13 +38,7 @@ At Acme Corporation, we take pride in what we create. Our manufacturing process 
 
 ## Products
 
-We make over ***200 shapes***. The most popular of these include:
-
-Shape | Design | Description | Links
------ | ------ | ----------- | -----
-Line  | -- |  Two pointy ends and a straight stretch of ink | Line on Wikipedia - https://en.wikipedia.org/wiki/Line_(geometry)
-Circle | &#8413; | A full round with no corners | Circle on Wikipedia - https://en.wikipedia.org/wiki/Circle
-Triangle |  &#9651; | Three lines with three corners |  Triangle on Wikipedia - https://en.wikipedia.org/wiki/Triangle
+{{% productinfo %}}
 
 ## Team
 
