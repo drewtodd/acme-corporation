@@ -1,9 +1,9 @@
-{{$title := $.Title | default site.Title}}
+{{$title := .Title | default site.Title}}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    {{if $.Description}}<meta name="description" content="{{$.Description}}">{{end}}
+    {{if .Description}}<meta name="description" content="{{$.Description}}">{{end}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./index.css">
     {<title>{{with $title}}{{.}}{{end}}</title>
@@ -11,9 +11,9 @@
   <body class="home">
     <section>
       <img src="./image/logo.svg" alt="Acme Logo" width="64"/>
-      {{if $.Param "title"}}<h1>{{$.Param "title"}}</h1>{{end}}
-      {{if $.Param "subtitle"}}<h2>{{$.Param "subtitle"}}</h2>{{end}}
-      <a href="./about">Explore</a>
+      {{if .Param "title"}}<h1>{{.Param "title"}}</h1>{{end}}
+      {{with .Param "subtitle"}}<h2>{{. | humanize | markdownify}}</h2>{{end}}
+      <a href="{{relref . (.Param "explore")}}">Explore</a>
     </section>
     <footer>
         <a href="./about">About Us</a>
