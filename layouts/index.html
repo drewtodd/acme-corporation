@@ -9,11 +9,14 @@
     {<title>{{with $title}}{{.}}{{end}}</title>
   </head>
   <body class="home">
-    <section>
+    <section id="intro">
       <img src="./image/logo.svg" alt="Acme Logo" width="64"/>
       {{if .Param "title"}}<h1>{{.Param "title"}}</h1>{{end}}
       {{with .Param "subtitle"}}<h2>{{. | humanize | markdownify}}</h2>{{end}}
       <a href="{{relref . (.Param "explore")}}">Explore</a>
+    </section>
+    <section id="description">
+      {{.Content}}
     </section>
     <footer>
         <a href="./about">About Us</a>
