@@ -9,6 +9,24 @@
     {<title>{{with $title}}{{.}}{{end}}</title>
   </head>
   <body class="home">
+    <header>
+      <a href="{{site.BaseURL | absLangURL}}">
+        <img src="./image/logo.svg" alt="Acme Logo" width="48px">
+        Acme Corporation
+      </a>
+      {{with site.Menus.main}}
+        <nav>
+          <button class="hamburger">&#9776;</button>
+          <ul>
+            {{range .}}
+              <li>
+                <a href="{{.URL}}">{{.Name | humanize}}</a>
+              </li>
+            {{end}}
+          </ul>
+        </nav>
+      {{end}}
+    </header>
     <section id="intro">
       <img src="./image/logo.svg" alt="Acme Logo" width="64"/>
       {{if .Param "title"}}<h1>{{.Param "title"}}</h1>{{end}}
@@ -18,11 +36,51 @@
     <section id="description">
       {{.Content}}
     </section>
-    <footer>
-        <a href="./about">About Us</a>
-        <a href="./privacy">Privacy Policy</a>
-        <a href="./terms">Terms of Use</a>
-        <a href="./contact">Contact Us</a>
+    <footer class="dark">
+      {{with site.Menus.footer}}
+        <nav>
+          <ul>
+            {{range .}}
+              <li><a href="{{.URL}}">{{.Name | humanize}}</a></li>
+            {{else}}
+              <!-- No menu items found -->
+            {{end}}
+          </ul>
+        </nav>
+      {{end}}
+      <div>
+        <ul>
+          {{ with site.Author.facebook }}
+            <li>
+              <a href="{{.}}">
+                <i class="icon-facebook"></i>
+              </a>
+            </li>
+          {{ end }}
+          {{ with site.Author.twitter }}
+            <li>
+              <a href="{{.}}">
+                <i class="icon-twitter"></i>
+              </a>
+            </li>
+          {{ end }}
+          {{ with site.Author.email }}
+            <li>
+              <a href="{{.}}">
+                <i class="icon-email"></i>
+              </a>
+            </li>
+          {{ end }}
+          {{ with site.Author.bogus }}
+            <li>
+              <a href="{{.}}">
+                <i class="icon-bogus"></i>
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div>{{site.Params.copyright | markdownify}}</div>
     </footer>
   </body>
 </html>

@@ -2,8 +2,10 @@ main:
   - identifier: about 
     name: About 
     url: /about 
-    weight: 100 
+    weight: 100
+    post: Our fascinating origins
   - identifier: contact 
     name: Contact 
     url: /contact 
     weight: 200
+    post: At your service
